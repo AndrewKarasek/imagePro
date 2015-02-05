@@ -14,7 +14,7 @@
 		// minified (especially when both are regularly referenced in your plugin).
 
 		// Create the defaults once
-		var pluginName = "fluidImagePro",
+		var pluginName = "fluidImageHelper",
 				defaults = {
 				turbo: false,
 		};
@@ -31,8 +31,10 @@
 		// Avoid Plugin.prototype conflicts
 		$.extend(Plugin.prototype, {
 				init: function () {
-						var loadingClass = "fluidImagePro-loading";
-						var pluginElmClass = "fluidImagePro";
+
+						var loadingClass = pluginName+"-loading";
+						var pluginElmClass = pluginName;
+						var loadedClass = pluginName+"-loaded";
 						var width = $(this.element).data("width");
 						var height = $(this.element).data("height");
 						var elm = this.element;
@@ -66,7 +68,8 @@
 							$(elm).load(function(){
 								$(elm).removeClass(loadingClass);
 								$(window).off("resize", func);
-								$(elm).css("height", "");								
+								$(elm).css("height", "");		
+								$(elm).addClass(loadedClass);						
 							});
 
 

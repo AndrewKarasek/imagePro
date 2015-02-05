@@ -321,16 +321,16 @@ img{
     background-color: grey;
 
 }
-.fluidImagePro-loading{
+.fluidImageHelper-loading{
     border: 2px solid red;
     opacity: 0;
 }
 
-.fluidImagePro{
+.fluidImageHelper{
     transition: all 4s ease;
     opacity: 1;
 }
 
-.fluidImagePro-loaded{
+.fluidImageHelper-loaded{
     transform: rotateZ(10deg);
 }
